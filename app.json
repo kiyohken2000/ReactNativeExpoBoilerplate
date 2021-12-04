@@ -13,11 +13,27 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "enabled": true,
+      "fallbackToCacheTimeout": 10000
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "reactnative.expo.firebase.boilerplate",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Use the photo library to change your avatar."
+      },
+      "userInterfaceStyle": "automatic"
+    },
+    "android": {
+      "package": "reactnative.expo.firebase.boilerplate",
+      "versionCode": 1,
+      "userInterfaceStyle": "automatic",
+      "permissions": [
+        "VIBRATE",
+        "CAMERA"
+      ]
     },
     "packagerOpts": {
       "config": "metro.config.js",

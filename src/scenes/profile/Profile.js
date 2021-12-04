@@ -1,10 +1,27 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import {
-  StyleSheet, Text, View, StatusBar,
-} from 'react-native'
+import { StyleSheet, Text, View, StatusBar } from 'react-native'
 import Button from 'components/Button'
 import { colors } from 'theme'
+import { useNavigation } from '@react-navigation/native'
+
+export default function Profile() {
+  const navigation = useNavigation()
+
+  return (
+    <View style={styles.root}>
+      <StatusBar barStyle="light-content" />
+      <Text style={styles.title}>Profile</Text>
+      <Button
+        title="Go to Details"
+        color="white"
+        backgroundColor={colors.lightPurple}
+        onPress={() => {
+          navigation.navigate('Details', { from: 'Profile' })
+        }}
+      />
+    </View>
+  )
+}
 
 const styles = StyleSheet.create({
   root: {
@@ -19,28 +36,3 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 })
-
-const Profile = ({ navigation }) => (
-  <View style={styles.root}>
-    <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Profile</Text>
-    <Button
-      title="Go to Details"
-      color="white"
-      backgroundColor={colors.lightPurple}
-      onPress={() => {
-        navigation.navigate('Details', { from: 'Profile' })
-      }}
-    />
-  </View>
-)
-
-Profile.propTypes = {
-  navigation: PropTypes.shape({ navigate: PropTypes.func }),
-}
-
-Profile.defaultProps = {
-  navigation: { navigate: () => null },
-}
-
-export default Profile

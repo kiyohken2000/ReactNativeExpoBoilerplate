@@ -5,21 +5,14 @@ import { colors } from 'theme'
 import { useNavigation } from '@react-navigation/native'
 import { useRoute } from '@react-navigation/native'
 
-export default function Details() {
+export default function Write() {
   const route = useRoute()
   const navigation = useNavigation()
-  const from = route?.params?.from
 
   return (
     <View style={styles.root}>
       <StatusBar barStyle="light-content" />
-      <Text style={styles.title}>{`Details (from ${from})`}</Text>
-      <Button
-        title="Go Back"
-        color="white"
-        backgroundColor={colors.pink}
-        onPress={navigation.goBack}
-      />
+      <Text style={styles.title}>Write Screen</Text>
     </View>
   )
 }
