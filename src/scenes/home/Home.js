@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { StyleSheet, Text, View, StatusBar } from 'react-native'
+import { StyleSheet, Text, View, StatusBar, SafeAreaView } from 'react-native'
 import Button from 'components/Button'
 import { colors } from 'theme'
 import { useNavigation } from '@react-navigation/native'
@@ -14,8 +14,8 @@ export default function Home() {
   }, [])
   
   return (
-    <View style={styles.root}>
-      <StatusBar barStyle="light-content" />
+    <SafeAreaView style={styles.root}>
+      <StatusBar barStyle='dark-content' />
       <Text style={styles.title}>Home</Text>
       <Button
         title="Go to Details"
@@ -25,7 +25,7 @@ export default function Home() {
           navigation.navigate('Details', { from: 'Home' })
         }}
       />
-      <View style={{marginVertical: 20}} />
+      <View style={{marginVertical: 10}} />
       <Button
         title="Go to Modal"
         color="white"
@@ -34,7 +34,16 @@ export default function Home() {
           navigation.navigate('Modal', { from: 'Home' })
         }}
       />
-    </View>
+      <View style={{marginVertical: 10}} />
+      <Button
+        title="Go to Post"
+        color="white"
+        backgroundColor={colors.lightPurple}
+        onPress={() => {
+          navigation.navigate('Post')
+        }}
+      />
+    </SafeAreaView>
   )
 }
 
