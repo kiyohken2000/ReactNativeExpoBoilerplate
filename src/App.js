@@ -3,13 +3,14 @@ import { View } from 'react-native'
 import { Provider } from 'react-redux'
 import store from 'utils/store'
 import 'utils/ignore'
+import { UserContextProvider } from './contexts/UserContext'
 
 // assets
 import { imageAssets } from 'theme/images'
 import { fontAssets } from 'theme/fonts'
 import Router from './routes'
 
-const App = () => {
+export default function App() {
   // state
   const [didLoad, setDidLoad] = useState(false)
 
@@ -29,9 +30,9 @@ const App = () => {
   if (!didLoad) return <View />
   return (
     <Provider store={store}>
-      <Router />
+      <UserContextProvider>
+        <Router />
+      </UserContextProvider>
     </Provider>
   )
 }
-
-export default App

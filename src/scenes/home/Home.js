@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { StyleSheet, Text, View, StatusBar } from 'react-native'
 import Button from 'components/Button'
 import { colors } from 'theme'
 import { useNavigation } from '@react-navigation/native'
+import { UserContext } from '../../contexts/UserContext'
 
 export default function Home() {
   const navigation = useNavigation()
+  const { user } = useContext(UserContext)
+
+  useEffect(() => {
+    console.log('user:', user)
+  }, [])
   
   return (
     <View style={styles.root}>
