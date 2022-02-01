@@ -25,6 +25,15 @@ export default function Home() {
           navigation.navigate('Details', { from: 'Home' })
         }}
       />
+      <View style={{marginVertical: 20}} />
+      <Button
+        title="Go to Modal"
+        color="white"
+        backgroundColor={colors.lightPurple}
+        onPress={() => {
+          navigation.navigate('Modal', { from: 'Home' })
+        }}
+      />
     </View>
   )
 }

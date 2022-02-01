@@ -20,6 +20,15 @@ export default function Details() {
         backgroundColor={colors.pink}
         onPress={navigation.goBack}
       />
+      <View style={{marginVertical: 20}} />
+      <Button
+        title="Go to Modal"
+        color="white"
+        backgroundColor={colors.lightPurple}
+        onPress={() => {
+          navigation.navigate('Modal', { from: 'Details' })
+        }}
+      />
     </View>
   )
 }
