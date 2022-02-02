@@ -28,7 +28,7 @@ export const ModalStacks = () => {
               name='Modal'
               component={Modal}
               options={{
-                //title: ctx.title,
+                title: ctx.title,
               }}
             />
             <Stack.Screen
