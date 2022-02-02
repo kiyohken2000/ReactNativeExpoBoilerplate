@@ -14,7 +14,7 @@ export default function Loading() {
 
   const initialize = async() => {
     const user = {
-      id: 12345,
+      id: 'user-1234567',
       userName: 'abcdef'
     }
     setUser(user)
