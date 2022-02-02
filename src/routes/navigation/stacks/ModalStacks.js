@@ -29,6 +29,7 @@ export const ModalStacks = () => {
               component={Modal}
               options={{
                 title: ctx.title,
+                headerBackTitle: '戻る',
               }}
             />
             <Stack.Screen
