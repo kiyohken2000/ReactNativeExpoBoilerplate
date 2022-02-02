@@ -17,6 +17,9 @@ export default function Home() {
     <SafeAreaView style={styles.root}>
       <StatusBar barStyle='dark-content' />
       <Text style={styles.title}>Home</Text>
+      <View style={styles.textContainer}>
+        <Text>ヘッダーなしボトムタブあり</Text>
+      </View>
       <Button
         title="Go to Details"
         color="white"
@@ -31,9 +34,13 @@ export default function Home() {
         color="white"
         backgroundColor={colors.lightPurple}
         onPress={() => {
-          navigation.navigate('Modal', { from: 'Home' })
+          navigation.navigate('ModalStack', {
+            screen: 'Modal',
+            params: {from: 'Home'}
+          })
         }}
       />
+      {/*
       <View style={{marginVertical: 10}} />
       <Button
         title="Go to Post"
@@ -41,6 +48,16 @@ export default function Home() {
         backgroundColor={colors.lightPurple}
         onPress={() => {
           navigation.navigate('Post')
+        }}
+      />
+      */}
+      <View style={{marginVertical: 10}} />
+      <Button
+        title="Go to Menu"
+        color="white"
+        backgroundColor={colors.lightPurple}
+        onPress={() => {
+          navigation.navigate('Menu')
         }}
       />
     </SafeAreaView>
@@ -59,4 +76,9 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 20,
   },
+  textContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 5
+  }
 })

@@ -1,17 +1,17 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import Button from 'components/Button'
-import { colors } from 'theme'
+import { useRoute } from "@react-navigation/native";
 
-export default function Post() {
-  const navigation = useNavigation()
+export default function Print() {
+  const route = useRoute()
+  const { from } = route.params
 
   return (
     <View style={styles.container}>
-      <Text>Post screen</Text>
+      <Text>Print screen</Text>
+      <Text>From: {from} screen</Text>
       <View style={styles.textContainer}>
-        <Text>ボトムタブなし、ヘッダーなしのモーダル</Text>
+        <Text>ボトムタブなしヘッダーありモーダル</Text>
       </View>
     </View>
   )

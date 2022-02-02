@@ -14,6 +14,9 @@ export default function Details() {
     <View style={styles.root}>
       <StatusBar barStyle="light-content" />
       <Text style={styles.title}>{`Details (from ${from})`}</Text>
+      <View style={styles.textContainer}>
+        <Text>ヘッダーあり</Text>
+      </View>
       <Button
         title="Go Back"
         color="white"
@@ -26,7 +29,10 @@ export default function Details() {
         color="white"
         backgroundColor={colors.lightPurple}
         onPress={() => {
-          navigation.navigate('Modal', { from: 'Details' })
+          navigation.navigate('ModalStack', {
+            screen: 'Modal',
+            params: {from: 'Details'}
+          })
         }}
       />
     </View>
@@ -45,4 +51,9 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 20,
   },
+  textContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 5
+  }
 })

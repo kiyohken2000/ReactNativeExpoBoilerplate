@@ -2,12 +2,14 @@ import React, { useContext, useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { UserContext } from "../../contexts/UserContext";
 import { HomeTitleContext } from "../../contexts/HomeTitleContext";
-import { useFocusEffect } from '@react-navigation/native'
-import { useRoute } from "@react-navigation/native";
+import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native'
+import Button from 'components/Button'
+import { colors } from 'theme'
 
 export default function Modal() {
   const { user } = useContext(UserContext)
   const { setTitle } = useContext(HomeTitleContext)
+  const navigation = useNavigation()
   const route = useRoute()
   const { from } = route.params
 
@@ -15,15 +17,21 @@ export default function Modal() {
     setTitle(user.id)
   });
 
-  useEffect(() => {
-    console.log(from)
-  }, [])
-
   return (
     <View style={styles.container}>
       <Text>ID: {user.id}</Text>
-      <Text>Name: {user.userName}</Text>
-      <Text>from: {from}</Text>
+      <Text>From: {from} screen</Text>
+      <View style={styles.textContainer}>
+        <Text>ボトムタブなし、ヘッダーありのモーダル</Text>
+      </View>
+      <Button
+        title="Go to Print"
+        color="white"
+        backgroundColor={colors.lightPurple}
+        onPress={() => {
+          navigation.navigate('Print', { from: 'Modal' })
+        }}
+      />
     </View>
   )
 }
@@ -33,5 +41,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  textContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 5
   }
 })

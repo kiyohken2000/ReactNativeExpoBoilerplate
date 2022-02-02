@@ -1,9 +1,10 @@
 import React, { useState, useContext } from "react";
 import { createStackNavigator } from '@react-navigation/stack'
 import TabNavigator from "./tabs/Tabs";
-import Modal from "../../scenes/modal/Modal";
 import Post from "../../scenes/post/Post";
 import { HomeTitleContext } from "../../contexts/HomeTitleContext";
+import { ModalStacks } from "./stacks/ModalStacks";
+import { TransitionPresets } from "@react-navigation/stack";
 
 const Stack = createStackNavigator()
 
@@ -31,22 +32,29 @@ export default function RootStack() {
             <Stack.Group
               screenOptions={{
                 presentation: 'modal',
-                headerShown: true
+                headerShown: false,
+                gestureEnabled: true,
+                cardOverlayEnabled: true,
+                ...TransitionPresets.ModalPresentationIOS,
               }}
             >
               <Stack.Screen
-                name='Modal'
-                component={Modal}
+                name='ModalStack'
+                component={ModalStacks}
                 options={{
                   title: ctx.title,
                 }}
               />
+            </Stack.Group>
+            <Stack.Group
+              screenOptions={{
+                presentation: 'modal',
+                headerShown: false
+              }}
+            >
               <Stack.Screen
                 name='Post'
                 component={Post}
-                options={{
-                  headerShown: false
-                }}
               />
             </Stack.Group>
           </Stack.Navigator>
