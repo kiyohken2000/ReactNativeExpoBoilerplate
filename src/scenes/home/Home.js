@@ -40,7 +40,6 @@ export default function Home() {
           })
         }}
       />
-      {/*
       <View style={{marginVertical: 10}} />
       <Button
         title="Go to Post"
@@ -50,7 +49,6 @@ export default function Home() {
           navigation.navigate('Post')
         }}
       />
-      */}
       <View style={{marginVertical: 10}} />
       <Button
         title="Go to Menu"
