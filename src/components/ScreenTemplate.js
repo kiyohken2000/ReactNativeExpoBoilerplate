@@ -5,14 +5,18 @@ import { useFocusEffect } from '@react-navigation/native';
 export default function ScreenTemplate(props) {
   const { screen, statusBar } = props
   const [barStyle, setBarStyle] = useState('')
+  const [trigger, setTorigger] = useState(0)
 
   useFocusEffect(
     useCallback(() => {
       console.log('screen:', screen)
-      setBarStyle(statusBar)
-      console.log('barStyle:', barStyle)
+      setTorigger(prev => prev + 1)
     }, [screen, statusBar])
   );
+
+  useEffect(() => {
+    setBarStyle(statusBar)
+  }, [trigger])
 
   return (
     <SafeAreaView style={styles.container}>
