@@ -1,19 +1,18 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import Button from 'components/Button'
-import { colors } from 'theme'
+import ScreenTemplate from "../../components/ScreenTemplate";
 
 export default function Post() {
-  const navigation = useNavigation()
 
   return (
-    <View style={styles.container}>
-      <Text>Post screen</Text>
-      <View style={styles.textContainer}>
-        <Text>ボトムタブなし、ヘッダーなしのモーダル</Text>
+    <ScreenTemplate screen='Post' statusBar='dark-content'>
+      <View style={styles.container}>
+        <Text>Post screen</Text>
+        <View style={styles.textContainer}>
+          <Text>ボトムタブなし、ヘッダーなしのモーダル</Text>
+        </View>
       </View>
-    </View>
+    </ScreenTemplate>
   )
 }
 

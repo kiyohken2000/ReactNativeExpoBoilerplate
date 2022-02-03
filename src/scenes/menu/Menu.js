@@ -1,14 +1,17 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import ScreenTemplate from "../../components/ScreenTemplate";
 
 export default function Menu() {
   return (
-    <View style={styles.container}>
-      <Text>Menu screen</Text>
-      <View style={styles.textContainer}>
-        <Text>ボトムタブありヘッダーなしモーダル</Text>
+    <ScreenTemplate screen='Menu' statusBar='dark-content'>
+      <View style={styles.container}>
+        <Text>Menu screen</Text>
+        <View style={styles.textContainer}>
+          <Text>ボトムタブありヘッダーなしモーダル</Text>
+        </View>
       </View>
-    </View>
+    </ScreenTemplate>
   )
 }
 
