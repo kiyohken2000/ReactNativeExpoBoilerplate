@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { authenticate } from 'slices/app.slice'
 import { Text, SafeAreaView, StyleSheet } from "react-native";
 import { UserContext } from '../../contexts/UserContext';
+import { fontSize } from 'theme'
 
 export default function Loading() {
   const dispatch = useDispatch()
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   label: {
-    fontSize: 24,
+    fontSize: fontSize.xxxLarge,
     fontWeight: '700'
   }
 })

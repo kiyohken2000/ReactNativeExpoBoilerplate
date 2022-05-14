@@ -1,15 +1,14 @@
 import React from 'react'
 import { StyleSheet, Text, View, StatusBar } from 'react-native'
 import Button from 'components/Button'
-import { colors } from 'theme'
-import { useNavigation } from '@react-navigation/native'
-import { useRoute } from '@react-navigation/native'
+import { colors, fontSize } from 'theme'
+import { useNavigation, useRoute } from '@react-navigation/native'
 import ScreenTemplate from '../../components/ScreenTemplate'
 
 export default function Details() {
   const route = useRoute()
   const navigation = useNavigation()
-  const from = route?.params?.from
+  const { from } = route?.params
 
   return (
     <ScreenTemplate screen='Detail' statusBar='light-content'>
@@ -50,7 +49,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.lightGrayPurple,
   },
   title: {
-    fontSize: 24,
+    fontSize: fontSize.xxxLarge,
     marginBottom: 20,
   },
   textContainer: {

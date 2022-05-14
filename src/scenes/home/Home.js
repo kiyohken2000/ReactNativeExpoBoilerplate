@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { StyleSheet, Text, View, StatusBar, SafeAreaView } from 'react-native'
 import Button from 'components/Button'
-import { colors } from 'theme'
+import { colors, fontSize } from 'theme'
 import { useNavigation } from '@react-navigation/native'
 import { UserContext } from '../../contexts/UserContext'
 import ScreenTemplate from '../../components/ScreenTemplate'
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 24,
+    fontSize: fontSize.xxxLarge,
     marginBottom: 20,
   },
   textContainer: {
