@@ -29,12 +29,15 @@ export const ModalStacks = () => {
               component={Modal}
               options={{
                 title: ctx.title,
-                headerBackTitle: '戻る',
+                headerBackTitleVisible: false,
               }}
             />
             <Stack.Screen
               name='Print'
               component={Print}
+              options={{
+                headerBackTitleVisible: false,
+              }}
             />
           </Stack.Navigator>
       )}

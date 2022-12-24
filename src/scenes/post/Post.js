@@ -5,7 +5,7 @@ import ScreenTemplate from "../../components/ScreenTemplate";
 export default function Post() {
 
   return (
-    <ScreenTemplate screen='Post' statusBar='dark-content'>
+    <ScreenTemplate>
       <View style={styles.container}>
         <Text>Post screen</Text>
         <View style={styles.textContainer}>

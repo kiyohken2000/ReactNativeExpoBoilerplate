@@ -1,6 +1,6 @@
-import { colors } from 'theme'
+import { colors } from "../../../../theme"
 
-const headerTintColor = 'white'
+const headerTintColor = colors.white
 const fontSize = 18
 const headerMode = 'float'
 

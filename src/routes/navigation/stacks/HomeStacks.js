@@ -2,8 +2,8 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { navigationProps } from './navigationProps/navigationProps'
 
-import Home from '../../../scenes/home'
-import Details from '../../../scenes/details'
+import Home from '../../../scenes/home/Home'
+import Details from '../../../scenes/details/Details'
 import Menu from '../../../scenes/menu/Menu'
 
 const Stack = createStackNavigator()
@@ -19,7 +19,8 @@ export const HomeStacks = () => {
         component={Home}
         options={({ navigation }) => ({
           title: 'Home',
-          headerShown: false
+          headerShown: false,
+          headerBackTitleVisible: false,
         })}
       />
       <Stack.Screen
@@ -27,6 +28,7 @@ export const HomeStacks = () => {
         component={Details}
         options={({ navigation }) => ({
           title: 'Details',
+          headerBackTitleVisible: false,
         })}
       />
       <Stack.Group
@@ -40,6 +42,7 @@ export const HomeStacks = () => {
           component={Menu}
           options={({ navigation }) => ({
             title: 'Menu',
+            headerBackTitleVisible: false,
           })}
         />
       </Stack.Group>

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import Write from '../../../../scenes/write'
+import Write from '../../../../scenes/write/Write'
 
 const Stack = createStackNavigator()
 

@@ -2,8 +2,8 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { navigationProps } from './navigationProps/navigationProps'
 
-import Profile from '../../../scenes/profile'
-import Details from '../../../scenes/details'
+import Profile from '../../../scenes/profile/Profile'
+import Details from '../../../scenes/details/Details'
 
 const Stack = createStackNavigator()
 
@@ -25,6 +25,7 @@ export const ProfileStacks = () => {
         component={Details}
         options={{
           title: 'Details',
+          headerBackTitleVisible: false,
         }}
       />
     </Stack.Navigator>

@@ -10,7 +10,7 @@ import { ReadWriteStacks } from '../stacks/ReadWriteStacks'
 
 const Tab = createBottomTabNavigator()
 
-const TabNavigator = () => {
+export default function TabNavigator() {
   return (
     <Tab.Navigator
       options={{
@@ -79,5 +79,3 @@ const TabNavigator = () => {
     </Tab.Navigator>
   )
 }
-
-export default TabNavigator

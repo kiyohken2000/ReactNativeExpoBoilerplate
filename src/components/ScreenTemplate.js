@@ -1,33 +1,42 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { StyleSheet, SafeAreaView, StatusBar } from "react-native";
-import { useFocusEffect } from '@react-navigation/native';
+import { StyleSheet, SafeAreaView, StatusBar, View } from "react-native";
+import { colors } from "../theme";
+import LoadingScreen from "./LoadingScreen";
+import ErrorScreen from "./ErrorScreen";
+import EmptyScreen from "./EmptyScreen";
 
 export default function ScreenTemplate(props) {
-  const { screen, statusBar } = props
-  const [barStyle, setBarStyle] = useState('')
-  const [trigger, setTorigger] = useState(0)
+  const { isLoading, isError, color, isEmpty } = props
 
-  useFocusEffect(
-    useCallback(() => {
-      console.log('screen:', screen)
-      setTorigger(prev => prev + 1)
-    }, [screen, statusBar])
-  );
+  if(isLoading) {
+    return <LoadingScreen />
+  }
 
-  useEffect(() => {
-    setBarStyle(statusBar)
-  }, [trigger])
+  if(isError) {
+    return <ErrorScreen />
+  }
+
+  if(isEmpty) {
+    return <EmptyScreen />
+  }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar barStyle={barStyle} />
-      {props.children}
+    <SafeAreaView style={[styles.container, { backgroundColor: color?color:colors.white}]}>
+      <StatusBar barStyle='light-content' />
+      <View style={styles.main}>
+        {props.children}
+      </View>
     </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: colors.bluePrimary
+  },
+  main: {
+    flex: 1,
+    backgroundColor: colors.white
   }
 })

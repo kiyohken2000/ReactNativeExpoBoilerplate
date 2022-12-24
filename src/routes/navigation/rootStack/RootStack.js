@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import { createStackNavigator } from '@react-navigation/stack'
-import TabNavigator from "./tabs/Tabs";
-import Post from "../../scenes/post/Post";
-import { HomeTitleContext } from "../../contexts/HomeTitleContext";
-import { ModalStacks } from "./stacks/ModalStacks";
+import TabNavigator from "../tabs/Tabs";
+import Post from "../../../scenes/post/Post";
+import { HomeTitleContext } from "../../../contexts/HomeTitleContext";
+import { ModalStacks } from "../stacks/ModalStacks";
 import { TransitionPresets } from "@react-navigation/stack";
 
 const Stack = createStackNavigator()

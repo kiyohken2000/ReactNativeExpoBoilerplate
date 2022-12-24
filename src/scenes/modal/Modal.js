@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { UserContext } from "../../contexts/UserContext";
 import { HomeTitleContext } from "../../contexts/HomeTitleContext";
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native'
-import Button from 'components/Button'
-import { colors } from 'theme'
+import Button from '../../components/Button'
+import { colors } from '../../theme'
 import ScreenTemplate from "../../components/ScreenTemplate";
 
 export default function Modal() {
@@ -19,21 +19,24 @@ export default function Modal() {
   });
 
   return (
-    <ScreenTemplate screen='Modal' statusBar='dark-content'>
+    <ScreenTemplate>
       <View style={styles.container}>
         <Text>ID: {user.id}</Text>
         <Text>From: {from} screen</Text>
         <View style={styles.textContainer}>
           <Text>ボトムタブなし、ヘッダーありのモーダル</Text>
         </View>
-        <Button
-          title="Go to Print"
-          color="white"
-          backgroundColor={colors.lightPurple}
-          onPress={() => {
-            navigation.navigate('Print', { from: 'Modal' })
-          }}
-        />
+        <View style={styles.buttonContainer}>
+          <Button
+            label="Go to Print"
+            color={colors.darkPurple}
+            labelColor={colors.white}
+            disable={false}
+            onPress={() => {
+              navigation.navigate('Print', { from: 'Modal' })
+            }}
+          />
+        </View>
       </View>
     </ScreenTemplate>
   )
@@ -49,5 +52,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingVertical: 5
+  },
+  buttonContainer: {
+    width: '100%',
+    paddingHorizontal: 10
   }
 })

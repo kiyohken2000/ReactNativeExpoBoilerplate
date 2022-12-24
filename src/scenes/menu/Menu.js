@@ -4,7 +4,7 @@ import ScreenTemplate from "../../components/ScreenTemplate";
 
 export default function Menu() {
   return (
-    <ScreenTemplate screen='Menu' statusBar='dark-content'>
+    <ScreenTemplate>
       <View style={styles.container}>
         <Text>Menu screen</Text>
         <View style={styles.textContainer}>

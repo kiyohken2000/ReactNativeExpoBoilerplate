@@ -1,17 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, View, StatusBar } from 'react-native'
-import Button from 'components/Button'
-import { colors } from 'theme'
-import { useNavigation } from '@react-navigation/native'
-import { useRoute } from '@react-navigation/native'
+import { StyleSheet, Text, View } from 'react-native'
+import { colors, fontSize } from '../../theme'
 import ScreenTemplate from '../../components/ScreenTemplate'
 
 export default function Write() {
-  const route = useRoute()
-  const navigation = useNavigation()
 
   return (
-    <ScreenTemplate screen='Write' statusBar='dark-content'>
+    <ScreenTemplate>
       <View style={styles.root}>
         <Text style={styles.title}>Write Screen</Text>
       </View>
@@ -28,7 +23,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.lightGrayPurple,
   },
   title: {
-    fontSize: 24,
-    marginBottom: 20,
+    fontSize: fontSize.xxxLarge,
   },
 })
