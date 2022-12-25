@@ -11,7 +11,7 @@
 
 ## Libraries
 
-- Expo
+- expo
 - axios
 - react-navigation
 - react-native-svg
@@ -24,6 +24,12 @@
 - BottomTab, TopTab, Modal and Stack navigation
 - Local storage
 - lottie animation
+
+## Requirements
+
+- Node 16
+- Yarn 1.22.x
+- expo-cli
 
 ## How to use
 
@@ -53,7 +59,7 @@ yarn start
 - ### Storage
 
 ```javascript
-import { storage } from '../../utils/Storage'
+import { storage } from '../../utils/storage'
 
 const saveStorage = async() => {
   const today = moment().toString()
@@ -81,7 +87,7 @@ const removeStorage = async() => {
 - ### Toast
 
 ```javascript
-import { showToast } from '../../utils/ShowToast'
+import { showToast } from '../../utils/showToast'
 
 const onShowToastPress = () => {
   showToast({title: 'Hello', body: 'React Native Developer'})
