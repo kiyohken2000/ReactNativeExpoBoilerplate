@@ -1,5 +1,7 @@
 # React Native Expo Boilerplate
 
+<a href="https://www.buymeacoffee.com/votepurchase" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
 ## Screens
 
 <img src='https://github.com/kiyohken2000/ReactNativeExpoBoilerplate/blob/master/__DELELE_ME__/img.jpg' width='80%'>
