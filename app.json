@@ -3,7 +3,11 @@
     "name": "react-native-boilerplate",
     "slug": "react-native-boilerplate",
     "privacy": "public",
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/logo-sm.png",
@@ -14,16 +18,19 @@
     },
     "updates": {
       "enabled": true,
-      "fallbackToCacheTimeout": 10000
+      "fallbackToCacheTimeout": 10000,
+      "url": "https://u.expo.dev/a3fb8cb1-7c9e-44a5-997b-be7ec8afde20"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "reactnative.expo.firebase.boilerplate",
       "buildNumber": "1.0.0",
       "infoPlist": {
         "NSPhotoLibraryUsageDescription": "Use the photo library to change your avatar.",
-        "CFBundleDevelopmentRegion":"ja_JP"
+        "CFBundleDevelopmentRegion": "ja_JP"
       },
       "userInterfaceStyle": "automatic"
     },
@@ -38,7 +45,21 @@
     },
     "packagerOpts": {
       "config": "metro.config.js",
-      "sourceExts": ["js", "jsx", "svg", "ts", "tsx"]
+      "sourceExts": [
+        "js",
+        "jsx",
+        "svg",
+        "ts",
+        "tsx"
+      ]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a3fb8cb1-7c9e-44a5-997b-be7ec8afde20"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     }
   }
 }
