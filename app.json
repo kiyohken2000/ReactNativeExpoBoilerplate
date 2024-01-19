@@ -5,8 +5,7 @@
     "privacy": "public",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
     "version": "1.0.0",
     "orientation": "portrait",
@@ -18,15 +17,14 @@
     },
     "updates": {
       "enabled": true,
-      "fallbackToCacheTimeout": 10000,
-      "url": "https://u.expo.dev/a3fb8cb1-7c9e-44a5-997b-be7ec8afde20"
+      "fallbackToCacheTimeout": 10000
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "reactnative.expo.firebase.boilerplate",
+      "bundleIdentifier": "reactnative.expo.boilerplate",
       "buildNumber": "1.0.0",
       "infoPlist": {
         "NSPhotoLibraryUsageDescription": "Use the photo library to change your avatar.",
@@ -35,7 +33,7 @@
       "userInterfaceStyle": "automatic"
     },
     "android": {
-      "package": "reactnative.expo.firebase.boilerplate",
+      "package": "reactnative.expo.boilerplate",
       "versionCode": 1,
       "userInterfaceStyle": "automatic",
       "permissions": [
@@ -53,13 +51,11 @@
         "tsx"
       ]
     },
-    "extra": {
-      "eas": {
-        "projectId": "a3fb8cb1-7c9e-44a5-997b-be7ec8afde20"
-      }
-    },
     "runtimeVersion": {
       "policy": "sdkVersion"
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
