@@ -35,7 +35,6 @@ Sign in and Sign up screen(option)
 
 - Node 18
 - Yarn 1.22.x
-- expo-cli
 
 ## How to use
 
