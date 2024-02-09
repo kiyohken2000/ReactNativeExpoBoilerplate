@@ -1,6 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { navigationProps } from './navigationProps/navigationProps'
+import GradientHeader from '../../../components/GradientHeader'
 
 import { ReadWriteTopTabs } from '../toptabs/ReadWriteTopTabs'
 
@@ -17,6 +18,7 @@ export const ReadWriteStacks = () => {
         component={ReadWriteTopTabs}
         options={({ navigation }) => ({
           title: 'ReadWrite',
+          headerBackground: () => <GradientHeader />,
         })}
       />
     </Stack.Navigator>

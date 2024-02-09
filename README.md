@@ -6,6 +6,10 @@
 
 <img src='https://github.com/kiyohken2000/ReactNativeExpoBoilerplate/blob/master/__DELELE_ME__/img.jpg' width='80%'>
 
+Sign in and Sign up screen(option)
+
+<img src='https://github.com/kiyohken2000/ReactNativeExpoBoilerplate/blob/master/__DELELE_ME__/img1.jpg' width='80%'>
+
 ## Infrastructure
 
 - React Native 
@@ -55,6 +59,10 @@ yarn install
 ```
 yarn start
 ```
+
+**Option**
+
+If you do not need sign in screen, set `isAutoLogin` to `true` in `config.js`.
 
 ## How to use utils
 

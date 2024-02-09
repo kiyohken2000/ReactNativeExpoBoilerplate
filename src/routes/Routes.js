@@ -4,10 +4,7 @@ import Main from './navigation'
 import Loading from '../scenes/loading/Loading'
 
 export default function Routes() {
-  const { checked, loggedIn } = useSelector((state) => state.app)
-
-  // TODO: switch router by loggedIn state
-  console.log('[##] loggedIn', loggedIn)
+  const { checked } = useSelector((state) => state.app)
 
   // rendering
   if (!checked) {

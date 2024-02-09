@@ -1,6 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { navigationProps } from './navigationProps/navigationProps'
+import GradientHeader from '../../../components/GradientHeader'
 
 import Home from '../../../scenes/home/Home'
 import Details from '../../../scenes/details/Details'
@@ -21,6 +22,7 @@ export const HomeStacks = () => {
           title: 'Home',
           headerShown: false,
           headerBackTitleVisible: false,
+          headerBackground: () => <GradientHeader />,
         })}
       />
       <Stack.Screen
@@ -29,6 +31,7 @@ export const HomeStacks = () => {
         options={({ navigation }) => ({
           title: 'Details',
           headerBackTitleVisible: false,
+          headerBackground: () => <GradientHeader />,
         })}
       />
       <Stack.Group
@@ -43,6 +46,7 @@ export const HomeStacks = () => {
           options={({ navigation }) => ({
             title: 'Menu',
             headerBackTitleVisible: false,
+            headerBackground: () => <GradientHeader />,
           })}
         />
       </Stack.Group>

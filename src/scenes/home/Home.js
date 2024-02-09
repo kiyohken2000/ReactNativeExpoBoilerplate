@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import Button from '../../components/Button'
 import { colors, fontSize } from '../../theme'
@@ -6,10 +6,13 @@ import { useNavigation } from '@react-navigation/native'
 import { UserContext } from '../../contexts/UserContext'
 import ScreenTemplate from '../../components/ScreenTemplate'
 import { showToast } from '../../utils/showToast'
+import { sleep } from '../../utils/utilFunctions'
+import Spinner from 'react-native-loading-spinner-overlay';
 
 export default function Home() {
   const navigation = useNavigation()
-  const { user } = useContext(UserContext)
+  const { user, setUser } = useContext(UserContext)
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     console.log('user:', user)
@@ -17,6 +20,18 @@ export default function Home() {
 
   const onToastPress = () => {
     showToast({title: 'Hello', body: 'React Native Developer'})
+  }
+
+  const onSignOutPress = async() => {
+    try {
+      setIsLoading(true)
+      await sleep(2000)
+      setUser('')
+    } catch(e) {
+      console.log('sign out error', e)
+    } finally {
+      setIsLoading(false)
+    }
   }
   
   return (
@@ -77,8 +92,20 @@ export default function Home() {
             disable={false}
             onPress={onToastPress}
           />
+          <View style={{marginVertical: 10}} />
+          <Button
+            label="Sign out"
+            color={colors.lightPurple}
+            labelColor={colors.white}
+            disable={false}
+            onPress={onSignOutPress}
+          />
         </View>
       </View>
+      <Spinner
+        visible={isLoading}
+        overlayColor={colors.loadingSpinnerColor}
+      />
     </ScreenTemplate>
   )
 }

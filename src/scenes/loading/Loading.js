@@ -4,6 +4,7 @@ import { authenticate } from 'slices/app.slice'
 import { Text, SafeAreaView, StyleSheet } from "react-native";
 import { UserContext } from '../../contexts/UserContext';
 import { fontSize } from 'theme'
+import { dummyUser, isAutoLogin } from '../../config';
 
 export default function Loading() {
   const dispatch = useDispatch()
@@ -14,12 +15,12 @@ export default function Loading() {
   }, [])
 
   const initialize = async() => {
-    const user = {
-      id: 'user-1234567',
-      userName: 'abcdef'
+    if(isAutoLogin) {
+      setUser(dummyUser)
+      dispatch(authenticate({ checked: true }))
+    } else {
+      dispatch(authenticate({ checked: true }))
     }
-    setUser(user)
-    dispatch(authenticate({ loggedIn: true, checked: true }))
   }
 
   return (

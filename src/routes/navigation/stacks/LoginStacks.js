@@ -3,33 +3,36 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { navigationProps } from './navigationProps/navigationProps'
 import GradientHeader from '../../../components/GradientHeader'
 
-import Profile from '../../../scenes/profile/Profile'
-import Details from '../../../scenes/details/Details'
+import SignIn from '../../../scenes/signin/SignIn'
+import SignUp from '../../../scenes/signup/SingUp'
 
 const Stack = createStackNavigator()
 
-export const ProfileStacks = () => {
+export const LoginStacks = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Profile"
+      initialRouteName="SignIn"
       screenOptions={navigationProps}
     >
       <Stack.Screen
-        name="Profile"
-        component={Profile}
+        name="SignIn"
+        component={SignIn}
         options={({ navigation }) => ({
-          title: 'Profile',
+          title: 'SignIn',
+          headerShown: true,
+          headerBackTitleVisible: false,
           headerBackground: () => <GradientHeader />,
         })}
       />
       <Stack.Screen
-        name="Details"
-        component={Details}
-        options={{
-          title: 'Details',
+        name="SignUp"
+        component={SignUp}
+        options={({ navigation }) => ({
+          title: 'SignUp',
+          headerShown: true,
           headerBackTitleVisible: false,
           headerBackground: () => <GradientHeader />,
-        }}
+        })}
       />
     </Stack.Navigator>
   )
