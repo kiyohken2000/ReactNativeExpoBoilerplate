@@ -8,6 +8,7 @@ import ScreenTemplate from '../../components/ScreenTemplate'
 import { showToast } from '../../utils/showToast'
 import { sleep } from '../../utils/utilFunctions'
 import Spinner from 'react-native-loading-spinner-overlay';
+import BlurBox from '../../components/BlurBox/BlurBox'
 
 export default function Home() {
   const navigation = useNavigation()
@@ -36,6 +37,7 @@ export default function Home() {
   
   return (
     <ScreenTemplate>
+      <BlurBox>
       <View style={styles.root}>
         <Text style={styles.title}>Home</Text>
         <View style={styles.textContainer}>
@@ -102,6 +104,7 @@ export default function Home() {
           />
         </View>
       </View>
+      </BlurBox>
       <Spinner
         visible={isLoading}
         overlayColor={colors.loadingSpinnerColor}
