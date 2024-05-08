@@ -24,8 +24,4 @@ const BlurEdge = ({
   );
 };
 
-BlurEdge.defaultProps = {
-  enabled: true
-};
-
 export default BlurEdge;
