@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { View, SafeAreaView, Text } from 'react-native'
+import { View, Text } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { DrawerActions } from '@react-navigation/native'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'

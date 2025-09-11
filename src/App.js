@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { View } from 'react-native'
 import { Provider } from 'react-redux'
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import store from 'utils/store'
 import 'utils/ignore'
 import { UserContextProvider } from './contexts/UserContext'
@@ -29,10 +30,12 @@ export default function App() {
   // rendering
   if (!didLoad) return <View />
   return (
-    <Provider store={store}>
-      <UserContextProvider>
-        <Router />
-      </UserContextProvider>
-    </Provider>
+    <SafeAreaProvider>
+      <Provider store={store}>
+        <UserContextProvider>
+          <Router />
+        </UserContextProvider>
+      </Provider>
+    </SafeAreaProvider>
   )
 }

@@ -1,4 +1,4 @@
-const isAutoLogin = false
+const isAutoLogin = true
 
 const dummyUser = {
   id: 'user-1234567',

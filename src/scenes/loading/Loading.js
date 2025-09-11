@@ -1,7 +1,8 @@
 import React, { useEffect, useContext } from 'react'
 import { useDispatch } from 'react-redux'
 import { authenticate } from 'slices/app.slice'
-import { Text, SafeAreaView, StyleSheet } from "react-native";
+import { Text, StyleSheet } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { UserContext } from '../../contexts/UserContext';
 import { fontSize } from 'theme'
 import { dummyUser, isAutoLogin } from '../../config';
