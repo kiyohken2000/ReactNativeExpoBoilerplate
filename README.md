@@ -33,7 +33,7 @@ Sign in and Sign up screen(option)
 
 ## Requirements
 
-- Node 18
+- Node 22.19.0
 - Yarn 1.22.x
 
 ## How to use
