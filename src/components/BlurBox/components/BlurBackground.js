@@ -1,7 +1,7 @@
 import BlurCircle from "./BlurCircle/BlurCircle";
 import styles from "./styles";
 import { SIZES } from "../constants";
-import { BlurMask, Canvas } from "@shopify/react-native-skia";
+import { Blur, Canvas, Group } from "@shopify/react-native-skia";
 import React, { useRef } from "react";
 
 const BlurBackground = () => {
@@ -14,18 +14,19 @@ const BlurBackground = () => {
 
   return (
     <Canvas style={styles.background}>
-      <BlurMask blur={50} style="normal" />
-
-      {circles.map((_, index) => (
-        <BlurCircle
-          key={index}
-          // Arrange elements in a checkerboard pattern
-          cx={index % 2 ? SIZES.WINDOW.WIDTH : 0}
-          cy={step * index}
-          r={r}
-          delay={index * 1000}
-        />
-      ))}
+      <Group>
+        <Blur blur={50} />
+        {circles.map((_, index) => (
+          <BlurCircle
+            key={index}
+            // Arrange elements in a checkerboard pattern
+            cx={index % 2 ? SIZES.WINDOW.WIDTH : 0}
+            cy={step * index}
+            r={r}
+            delay={index * 1000}
+          />
+        ))}
+      </Group>
     </Canvas>
   );
 };

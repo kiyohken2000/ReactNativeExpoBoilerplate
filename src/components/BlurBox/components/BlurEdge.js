@@ -7,7 +7,7 @@ import {
 import React from "react";
 
 const BlurEdge = ({
-  enabled,
+  enabled = true,
   height,
   style,
   ...props
@@ -18,7 +18,11 @@ const BlurEdge = ({
   return (
     <Canvas style={[style, { height }]}>
       <Rect x={0} y={0} width={SIZES.WINDOW.WIDTH} height={height}>
-        <LinearGradient {...props} />
+        <LinearGradient
+          start={props.start}
+          end={props.end}
+          colors={props.colors}
+        />
       </Rect>
     </Canvas>
   );
